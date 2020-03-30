@@ -1,4 +1,4 @@
-body {
+/* body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
@@ -68,4 +68,113 @@ textarea{
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+} */
+
+
+/* ---------------- */
+
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+} */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+}
+
+textarea{
+  background: transparent;
+  border: none;
+  resize: none;
+  color: #000000;
+  border-left: 1px solid black;
+  padding: 10px;
+  
+}
+
+.jumbotron {
+  text-align: center;
+  color: black;
+  border-radius: 0;
+  border-bottom: 10px solid #191919;
+}
+
+.description{
+  white-space: pre-wrap;
+}
+
+.time-block{
+  text-align: center;
+  border-radius: 15px;
+}
+
+.row {
+  white-space: pre-wrap;
+  height: 80px;
+  border-top: 1px solid white;
+}
+
+.hour {
+  background-color: #ffffff;
+  color: #191919;
+  border-top: 1px dashed #191919;
+  text-align: right;
+  padding: 5px;
+}
+
+.planner {
+  border: none;
+  background-color: transparent;
+  resize: none;
+  overflow: auto;
+  outline: none;
+  width: 100%;
+}
+
+.planner-text {
+  background-color: #d3d3d3;
+  color: white;
+  border-top: 1px solid white;
+}
+.past {
+  background-color: #d3d3d3;
+  color: white;
+  border-top: 1px dashed white;
+}
+
+.present {
+  background-color: #e46962;
+  color: white;
+  border-top: 1px dashed white;
+}
+
+.future {
+  background-color: #93d493;
+  color: white;
+  border-top: 1px dashed white;
+}
+
+.saveBtn {
+  border-left: 1px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #4fa2b4;
+  color: white;
+}
+
+.saveBtn i:hover {
+  font-size: 22px;
+  transition: all .3s ease-in-out;
+}
+
+.saveIcon {
+  color: white;
+  font-size: 20px;
+  overflow: hidden;
+  padding: 2px;
 }
