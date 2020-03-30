@@ -50,7 +50,7 @@
                 <textarea class="agenda"></textarea>
             </div>
             <div class="col-1 saveBtn">
-                <button type="button" class="btn saveIcon"><i class="far fa-save"></i></button>
+                <button type="button" class="btn saveIcon"><i class="fas fa-save"></i></button>
             </div>
         </div>
     </div> 
@@ -95,134 +95,128 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
-      <!-- Use Jquery to append the text in the <p> element to current day using moment.js -->
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-      <!-- Timeblocks go here -->
-      <!-- Create a div with class = time-block -->
-      <div class="time-block">
-      <!-- Using Bootstrap, create rows with class row for each hour 9 AM to 5 PM-->
-      <!-- Add the following classes to toggle between: past, present, future -->   
-      <!-- Create a save button with class saveBtn and manipulate its use via Jquery  -->
-        <div class="row">
+      
+     <!-- 9AM timeblock -->
+        <div class="row" id="9">
             <div class="col-2 hour">
                 9AM
-                <!-- <p class="display-time"></p> -->
             </div>
-            <div class="col-9 planner-text btnBg">
-                <textarea class="planner" id="user-input-9AM"></textarea>
+            <div class="col-9">
+                <textarea class="planner" id="text-9AM"></textarea>
             </div>
             <div class="col-1 saveBtn">
-                <button type="button" class="btn saveIcon btn-9AM"><i class="far fa-save"></i></button>
+              <!-- <i class="fas fa-eraser"></i> -->
+                <button type="button" class="fas fa-save btn saveIcon btn-9AM"></button>
             </div>
         </div>
-      </div>
       
-    <div class="time-block">
-        <div class="row">
-            <div class="col-2 hour" id="slot-10">
+      <!-- 10AM timeblock -->
+        <div class="row" id="10">
+            <div class="col-2 hour">
                 10AM
             </div>
-            <div class="col-9 planner-text">
-                <textarea class="planner"></textarea>
+            <div class="col-9">
+                <textarea class="planner" id="text-10AM"></textarea>
             </div>
                 <div class="col-1 saveBtn">
-                    <button type="button" class="btn saveIcon"><i class="far fa-save"></i></button>
+                    <button type="button" class="fas fa-save btn saveIcon btn-10AM"></button>
                 </div>
         </div>
-    </div>
-    <div class="time-block">
-        <div class="row">
-            <div class="col-2 hour" id="slot-11">
+    
+        <!-- 11AM timeblock -->
+        <div class="row" id="11">
+            <div class="col-2 hour">
                 11AM
             </div>
-            <div class="col-9 planner-text">
-                <textarea class="planner"></textarea>
+            <div class="col-9">
+                <textarea class="planner" id="text-11AM"></textarea>
             </div>
             <div class="col-1 saveBtn">
-                <button type="button" class="btn saveIcon"><i class="far fa-save"></i></button>
+                <button type="button" class="fas fa-save btn saveIcon btn-11AM"></button>
             </div>
         </div>
-    </div>
-    <div class="time-block">
-        <div class="row">
-            <div class="col-2 hour" id="slot-12">
+    
+        <!-- 12AM timeblock -->
+        <div class="row" id="12">
+            <div class="col-2 hour">
                 12AM
             </div>
-            <div class="col-9 planner-text">
-                <textarea class="planner"></textarea>
+            <div class="col-9">
+                <textarea class="planner" id="text-12AM"></textarea>
             </div>
             <div class="col-1 saveBtn">
-                <button type="button" class="btn saveIcon"><i class="far fa-save"></i></button>
+                <button type="button" class="fas fa-save btn saveIcon btn-12AM"></button>
             </div>
         </div>
-    </div> 
-    <div class="time-block">
-        <div class="row">
-            <div class="col-2 hour" id="slot-13">
+    
+        <!-- 1PM timeblock -->
+        <div class="row" id="13">
+            <div class="col-2 hour">
                 1PM
             </div>
-            <div class="col-9 planner-text">
-                <textarea class="planner"></textarea>
+            <div class="col-9">
+                <textarea class="planner" id="text-1PM"></textarea>
             </div>
             <div class="col-1 saveBtn">
-                <button type="button" class="btn saveIcon"><i class="far fa-save"></i></button>
+                <button type="button" class="fas fa-save btn saveIcon btn-1PM"></button>
             </div>
         </div>
-    </div> 
-    <div class="time-block">
-        <div class="row">
-            <div class="col-2 hour" id="slot-14">
+    
+        <!-- 2PM timeblock -->
+        <div class="row" id="14">
+            <div class="col-2 hour">
                 2PM
             </div>
-        <div class="col-9 planner-text">
-            <textarea class="planner"></textarea>
+        <div class="col-9">
+            <textarea class="planner" id="text-2PM"></textarea>
         </div>
             <div class="col-1 saveBtn">
-                <button type="button" class="btn saveIcon"><i class="far fa-save"></i></button>
+                <button type="button" class="fas fa-save btn saveIcon btn-2PM"></button>
             </div>
         </div>
-    </div>
-    <div class="time-block">
-        <div class="row"> 
-            <div class="col-2 hour" id="slot-15">
+    
+        <!-- 3PM timeblock -->
+        <div class="row" id="15"> 
+            <div class="col-2 hour">
                 3PM
             </div>
-            <div class="col-9 planner-text">
-                <textarea class="planner"></textarea>
+            <div class="col-9">
+                <textarea class="planner" id="text-3PM"></textarea>
             </div>
             <div class="col-1 saveBtn">
-                <button type="button" class="btn saveIcon"><i class="far fa-save"></i></button>
+                <button type="button" class="fas fa-save btn saveIcon btn-3PM"></button>
             </div>
         </div>
-    </div>
-    <div class="time-block">
-        <div class="row">
-            <div class="col-2 hour" id="slot-16">
+    
+        <!-- 4PM timeblock -->
+        <div class="row" id="16">
+            <div class="col-2 hour">
                 4PM
             </div>
-            <div class="col-9 planner-text">
-                <textarea class="planner"></textarea>
+            <div class="col-9">
+                <textarea class="planner" id="text-4PM"></textarea>
             </div>
             <div class="col-1 saveBtn">
-                <button type="button" class="btn saveIcon"><i class="far fa-save"></i></button>
+                <button type="button" class="fas fa-save btn saveIcon btn-4PM"></button>
             </div>
         </div>
-    </div> 
-    <div class="time-block">
-        <div class="row">
-            <div class="col-2 hour" id="slot-17">
+     
+        <!-- 5PM timeblock -->
+        <div class="row" id="17">
+            <div class="col-2 hour">
                 5PM
             </div>
-            <div class="col-9 planner-text">
-                <textarea class="planner"></textarea>
+            <div class="col-9">
+                <textarea class="planner" id="text-5PM"></textarea>
             </div>
             <div class="col-1 saveBtn">
-                <button type="button" class="btn saveIcon"><i class="far fa-save"></i></button>
+                <button type="button" class="fas fa-save btn saveIcon btn-5PM"></button>
             </div>
         </div>
-    </div>
+    
       
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

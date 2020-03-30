@@ -1,87 +1,112 @@
-// let currentDate = moment().format('MMMM Do YYYY, h:mm:ss a') // March 26th 2020, 3:33:02 am
-// console.log(currentDate);
-
+// function to set the time and date of the current day
 function setDateTime() {
     const today = moment();
     let currentDay = $("#currentDay");
-    
     currentDay.text(today.format("dddd, " + "MMMM " + "DD, " + "YYYY, " + "h:mm a"));
 }
-
 setDateTime();
 
-//LOCAL STORAGE
-//defining variable referencing HTML
-let userInput9AM = $("#user-input-9AM");
-let btn9AM = $("#btn-9AM");
 
-let userInput10AM = document.getElementById("input10am");
-let btn10am = document.getElementById("btn10am");
+// Onclick functions for each save button
+// saves user input to local storage and retrieves it
 
-let userInput11AM = document.getElementById("input11am");
-let btn11am = document.getElementById("btn11am");
-
-let userInput12AM = document.getElementById("input12pm");
-let btn12pm = document.getElementById("btn12pm");
-
-let userInput1PM = document.getElementById("input1pm");
-let btn1pm = document.getElementById("btn1pm");
-
-let userInput2PM = document.getElementById("input2pm");
-let btn2pm = document.getElementById("btn2pm");
-
-let userInput3PM = document.getElementById("input3pm");
-let btn3pm = document.getElementById("btn3pm");
-
-let userInput4PM = document.getElementById("input4pm");
-let btn4pm = document.getElementById("btn4pm");
-
-let userInput5PM = document.getElementById("input5pm");
-let btn5pm = document.getElementById("btn5pm");
-
-
-//inputting info into local storage
-$("#user-input-9AM").val(localStorage.getItem("btn-9AM"));
-
-$("#input10am").val(localStorage.getItem("btn10am"));
-
-$("#input11am").val(localStorage.getItem("btn11am"));
-
-$("#input12pm").val(localStorage.getItem("btn12pm"));
-
-$("#input1pm").val(localStorage.getItem("btn1pm"));
-
-$("#input2pm").val(localStorage.getItem("btn2pm"));
-
-$("#input3pm").val(localStorage.getItem("btn3pm"));
-
-$("#input4pm").val(localStorage.getItem("btn4pm"));
-
-$("#input5pm").val(localStorage.getItem("btn5pm"));
-
-
-//Buttons will save user inputs to local store. Additionally if there is saved inputs, they will display in the textarea.
-$(".b9").on("click", function() {
-    var entertext = $(".e9").val();
-    localStorage.setItem("9:00", entertext);
+// 9AM save button
+$(".btn-9AM").on("click", function() {
+    let userInput = $("#text-9AM").val();
+    localStorage.setItem("9AM", userInput);
 });
-$(".e9").val(localStorage.getItem("9:00"));
+$("#text-9AM").val(localStorage.getItem("9AM"));
 
-$(".b10").on("click", function() {
-    var entertext = $(".e10").val();
-    localStorage.setItem("10:00", entertext);
+// 10AM save button
+$(".btn-10AM").on("click", function() {
+    let userInput = $("#text-10AM").val();
+    localStorage.setItem("10AM", userInput);
 });
+$("#text-10AM").val(localStorage.getItem("10AM"));
 
-//save button to input info into rows
-$(".saveBtn").on("click", function (event) {
-    //keeps information from clearing after page refresh
-    event.preventDefault();
-    //when save button is clicked, the value of the textarea is saved
-    let plannerText = $(this).parent(".btnBg").siblings("planner-text").val();
-    let key = $(this).attr("id");
-    console.log(plannerText);
-    localStorage.setItem(key, plannerText);
+// 11AM save button
+$(".btn-11AM").on("click", function() {
+    let userInput = $("#text-11AM").val();
+    localStorage.setItem("11AM", userInput);
 });
+$("#text-11AM").val(localStorage.getItem("11AM"));
+
+// 12AM save button
+$(".btn-12AM").on("click", function() {
+    let userInput = $("#text-12AM").val();
+    localStorage.setItem("12AM", userInput);
+});
+$("#text-12AM").val(localStorage.getItem("12AM"));
+
+// 1PM save button
+$(".btn-1PM").on("click", function() {
+    let userInput = $("#text-1PM").val();
+    localStorage.setItem("1PM", userInput);
+});
+$("#text-1PM").val(localStorage.getItem("1PM"));
+
+// 2PM save button
+$(".btn-2PM").on("click", function() {
+    let userInput = $("#text-2PM").val();
+    localStorage.setItem("2PM", userInput);
+});
+$("#text-2PM").val(localStorage.getItem("2PM"));
+
+// 3PM save button
+$(".btn-3PM").on("click", function() {
+    let userInput = $("#text-3PM").val();
+    localStorage.setItem("3PM", userInput);
+});
+$("#text-3PM").val(localStorage.getItem("3PM"));
+
+// 4PM save button
+$(".btn-4PM").on("click", function() {
+    let userInput = $("#text-4PM").val();
+    localStorage.setItem("4PM", userInput);
+});
+$("#text-4PM").val(localStorage.getItem("4PM"));
+
+// 5PM save button
+$(".btn-5PM").on("click", function() {
+    let userInput = $("#text-5PM").val();
+    localStorage.setItem("5PM", userInput);
+});
+$("#text-5PM").val(localStorage.getItem("5PM"));
 
 
+
+
+
+// $(".btn-5PM").on("click", function() {
+//     $('textarea').val('').
+// });
+
+// set a variable to all divs with the row class
+const rows = $("div.row");
+// create a variable with the value of the current our using Moment.js
+let currentHour = parseInt(moment().format('H'));
+
+// user Array.from to create an array from the rows which we are iterating through with the forEach method
+Array.from(rows).forEach(function(row) {
+// here the specific ids set one each row is set to the variable rowId
+  let
+    rowId = row.id,
+    rowHour;
+  if (rowId) {
+    rowHour = parseInt(rowId);
+  }
+  if (rowHour) {
+    // We compare the row id to current hour and set the correct "color" class dependent
+    if (currentHour === rowHour) {
+        row.classList.add("present");
+        row.classList.remove("past", "future");
+    } else if ((currentHour < rowHour)){
+        row.classList.add("future");
+        row.classList.remove("past", "present");
+    } else if ((currentHour > rowHour)){
+        row.classList.add("past");
+        row.classList.remove("present", "future");
+    }
+  }
+});
 
