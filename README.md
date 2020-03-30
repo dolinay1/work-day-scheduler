@@ -10,5 +10,5 @@ The application shows the current day and time, and allows the user to record ev
 HTML, Javascript, CSS, Bootstrap 4, Jquery, Moment.js
 
 # Screenshots:
-![Screenshot 1].(Assets/img/workdayscheduler1.jpg)
-![Screenshot 2].(Assets/img/workdayscheduler2.jpg)
+![Screenshot 1](Assets/img/workdayscheduler1.jpg)
+![Screenshot 2](Assets/img/workdayscheduler2.jpg)
