@@ -1,3 +1,5 @@
+// JUMBOTRON TIME DISPLAY -----------------------
+
 // function to set the time and date of the current day
 function setDateTime() {
     const today = moment();
@@ -7,7 +9,10 @@ function setDateTime() {
 setDateTime();
 
 
-// Onclick functions for each save button
+// USER INPUT AND SAVE BUTTONS -----------------------
+
+
+// Onclick functions for each individual save button
 // saves user input to local storage and retrieves it
 
 // 9AM save button
@@ -74,12 +79,8 @@ $(".btn-5PM").on("click", function() {
 $("#text-5PM").val(localStorage.getItem("5PM"));
 
 
+// TIME DEPENDENT COLOR CHANGES -----------------------
 
-
-
-// $(".btn-5PM").on("click", function() {
-//     $('textarea').val('').
-// });
 
 // set a variable to all divs with the row class
 const rows = $("div.row");
@@ -93,10 +94,12 @@ Array.from(rows).forEach(function(row) {
     rowId = row.id,
     rowHour;
   if (rowId) {
+// store the parsed row id into the rowHour variable
     rowHour = parseInt(rowId);
   }
   if (rowHour) {
-    // We compare the row id to current hour and set the correct "color" class dependent
+// We compare the row id to current hour, and the specific row to the correct "color" class
+// Used vanilla javascript as it was too difficult to use jquery change the row parameter
     if (currentHour === rowHour) {
         row.classList.add("present");
         row.classList.remove("past", "future");
